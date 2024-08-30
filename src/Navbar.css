@@ -1,0 +1,68 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* background-color: #333; */
+  background-color: white;
+  color: white;
+}
+
+.navbar-logo img {
+  height: 40px; /* Ajusta según el tamaño de tu logo */
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  display: none; /* Oculto por defecto */
+  background: none;
+  border: none;
+  /* color: white; */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilo para los enlaces del menú */
+.menu-items {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-items a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.menu-items a:hover {
+  /* background-color: #575757; */
+  background-color: #d3e7ec;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block; /* Muestra el botón de menú en pantallas pequeñas */
+  }
+
+  .menu-items {
+    display: none; /* Oculta los enlaces del menú por defecto en pantallas pequeñas */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajusta según sea necesario */
+    right: 20px;
+    /* background-color: #333; */
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+    width: 200px; /* Ajusta según sea necesario */
+  }
+
+  .menu-items.open {
+    display: flex; /* Muestra el menú cuando está abierto */
+  }
+}
