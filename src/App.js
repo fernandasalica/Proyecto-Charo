@@ -3,6 +3,7 @@ import Navbar1 from "./components/Navbar1";
 import { Route, Routes } from "react-router-dom";
 import Landing from "./components/Landing";
 import DetailNew from "./components/DetailNew";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/detalle/:id" element={<DetailNew />} />
+          <Route path="/cart" element={<Cart />} />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
         <Footer />

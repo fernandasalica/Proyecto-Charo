@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Navbar.css";
 import logo from "../images/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar1 = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,9 @@ const Navbar1 = () => {
           <a href="http://localhost:3000/#info">Más información</a>
           <a href="http://localhost:3000/#contacto">Contacto</a>
         </div>
+      </div>
+      <div className="navbar-menu">
+        <Link to="/cart">Carrito</Link>
       </div>
     </nav>
   );

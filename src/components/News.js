@@ -4,6 +4,7 @@ import Pagination from "../components/Pagination";
 
 const News = () => {
   const itemsPerPage = 3; // Número de objetos por página
+
   return (
     <>
       <section className="section" id="noticias">

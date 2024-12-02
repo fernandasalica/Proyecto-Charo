@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 function Pagination({ data, itemsPerPage }) {
@@ -18,6 +19,7 @@ function Pagination({ data, itemsPerPage }) {
   const prevPage = () => {
     setCurrentPage(currentPage - 1);
   };
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div>
@@ -40,6 +42,11 @@ function Pagination({ data, itemsPerPage }) {
                     <span>
                       <Link to={`/detalle/${id}`}>Más info...</Link>
                     </span>{" "}
+                    <span>
+                      <button onClick={() => addToCart(tour)}>
+                        Agregar al Carrito
+                      </button>
+                    </span>
                   </p>
                 </div>
               </div>
