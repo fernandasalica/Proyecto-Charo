@@ -25,12 +25,12 @@ function Pagination({ data, itemsPerPage }) {
     <div>
       <div className="section-center featured-center">
         {currentItems.map((tour) => {
-          const { id, image1, date, title, info_summary } = tour;
+          const { id, image1, price, title, info_summary } = tour;
           return (
             <article className="tour-card" key={id}>
               <div className="tour-img-container">
                 <img src={image1} className="tour-img" alt="" />
-                <p className="tour-date">{date}</p>
+                <p className="tour-date">{price}</p>
               </div>
               <div className="tour-info">
                 <div className="tour-title">
