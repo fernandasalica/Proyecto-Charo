@@ -25,25 +25,23 @@ function Pagination({ data, itemsPerPage }) {
     <div>
       <div className="section-center featured-center">
         {currentItems.map((tour) => {
-          const { id, image1, price, title, info_summary } = tour;
+          const { id, image1, price, title } = tour;
           return (
             <article className="tour-card" key={id}>
               <div className="tour-img-container">
                 <img src={image1} className="tour-img" alt="" />
-                <p className="tour-date">{price}</p>
+                <p className="tour-date">$ {price}</p>
               </div>
               <div className="tour-info">
                 <div className="tour-title">
-                  <h4>{title}</h4>
+                  <h4>
+                    <Link to={`/detalle/${id}`}>{title}</Link>
+                  </h4>
                 </div>
-                {/* <p>{info_summary}</p> */}
                 <div className="tour-footer">
                   <p>
                     <span>
-                      <Link to={`/detalle/${id}`}>Más info...</Link>
-                    </span>{" "}
-                    <span>
-                      <button onClick={() => addToCart(tour)}>
+                      <button onClick={() => addToCart(tour)} className="btn1">
                         Agregar al Carrito
                       </button>
                     </span>
