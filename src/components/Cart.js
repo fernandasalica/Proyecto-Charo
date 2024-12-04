@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import "./cart.css";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   window.scrollTo(0, 0);
@@ -32,51 +33,85 @@ const Cart = () => {
       <div className="cart">
         <div>
           {cart.length === 0 ? (
-            <p>El carrito está vacío</p>
+            <div>
+              <p>El carrito está vacío</p>
+              <button className="btn">
+                <Link to={`http://localhost:3000/#inicio`}>
+                  Volver a la tienda
+                </Link>
+              </button>
+            </div>
           ) : (
-            <table style={{ margin: "0 auto" }}>
-              <thead>
-                <tr>
-                  <th>Producto</th>
-                  <th>Precio</th>
-                  <th>Cantidad</th>
-                  <th>Subtotal</th>
-                  <th>Eliminar</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cart.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.title}</td>
-                    <td>$ {item.price.toFixed(2)}</td>
-                    <td>
-                      <button
-                        onClick={() => handleDecrease(item.id)}
-                        className="btn"
-                      >
-                        -
-                      </button>
-                      {item.quantity}
-                      <button
-                        onClick={() => handleIncrease(item.id)}
-                        className="btn"
-                      >
-                        +
-                      </button>
-                    </td>
-                    <td>$ {(item.price * item.quantity).toFixed(2)}</td>
-                    <td>
-                      <button
-                        onClick={() => removeFromCart(item.id)}
-                        className="btn"
-                      >
-                        Eliminar
-                      </button>
-                    </td>
+            <>
+              <table style={{ margin: "0 auto" }} className="cart-table">
+                <thead>
+                  <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th></th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {cart.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.title}</td>
+                      <td>$ {item.price.toFixed(2)}</td>
+                      <td>
+                        <button
+                          onClick={() => handleDecrease(item.id)}
+                          className="btn"
+                        >
+                          -
+                        </button>
+                        {item.quantity}
+                        <button
+                          onClick={() => handleIncrease(item.id)}
+                          className="btn"
+                        >
+                          +
+                        </button>
+                      </td>
+                      <td>$ {(item.price * item.quantity).toFixed(2)}</td>
+                      <td>
+                        <i
+                          className="fas fa-trash"
+                          onClick={() => removeFromCart(item.id)}
+                          style={{ cursor: "pointer", color: "#007bff" }} // Estilo para el ícono
+                          title="Eliminar"
+                        ></i>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <div style={{ marginLeft: "20px" }}>
+                <h3 style={{ marginTop: "25px" }}>Total</h3>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Total:</td>
+                      <td>$ {calculateTotal()}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style={{ marginTop: "20px" }}>
+                  <button
+                    onClick={() => alert("Proceder al pago")}
+                    className="btn"
+                  >
+                    Proceder al pago
+                  </button>
+                  <button className="btn">
+                    <Link to={`http://localhost:3000/#inicio`}>
+                      Volver a la tienda
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            </>
           )}
           {cart.length > 0 && (
             <div style={{ marginTop: "20px" }}>
@@ -86,9 +121,8 @@ const Cart = () => {
             </div>
           )}
         </div>
-
         {/* Tabla de Total */}
-        <div style={{ marginLeft: "20px" }}>
+        {/* <div style={{ marginLeft: "20px" }}>
           <h3>Total</h3>
           <table style={{ margin: "0 auto" }}>
             <tbody>
@@ -109,7 +143,7 @@ const Cart = () => {
               Elegir más productos
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

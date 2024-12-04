@@ -66,3 +66,9 @@
     display: flex; /* Muestra el menú cuando está abierto */
   }
 }
+
+.badge {
+  position: relative;
+  top: -10px; /* Ajusta la posición según sea necesario */
+  right: -10px; /* Ajusta la posición según sea necesario */
+}

@@ -1,12 +1,11 @@
 .cart {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   padding: 20px;
 }
 
 table {
-  /* margin: 0 auto; */
   margin: 40px auto 20px; /* Añadir margen superior de 40px y margen inferior de 20px */
   border-collapse: collapse;
   width: 100%;

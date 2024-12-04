@@ -8,12 +8,15 @@ export const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  const [cartItems, setCartItems] = useState([]);
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   const addToCart = (item) => {
     setCart([...cart, item]);
+    setCartItems((prevItems) => [...prevItems, item]);
   };
 
   const removeFromCart = (itemId) => {
@@ -33,10 +36,17 @@ export const CartProvider = ({ children }) => {
       )
     );
   };
-
+  const itemCount = cartItems.length;
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart, updateQuantity }}
+      value={{
+        cart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        updateQuantity,
+        itemCount,
+      }}
     >
       {children}
     </CartContext.Provider>

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { tours } from "../data";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 const DetailNew = () => {
   window.scrollTo(0, 0);
@@ -12,6 +13,14 @@ const DetailNew = () => {
 
   // Filtrar el array de tours basado en el ID
   const filteredTour = tours.find((tour) => tour.id === parsedId);
+  const { addToCart } = useContext(CartContext); // Consume el contexto
+
+  const handleAddToCart = () => {
+    if (filteredTour) {
+      addToCart(filteredTour); // Agrega el tour al carrito
+      alert(`${filteredTour.title} ha sido agregado al carrito.`); // Mensaje de confirmación
+    }
+  };
 
   const images = [
     filteredTour.image1,
@@ -27,7 +36,7 @@ const DetailNew = () => {
 
   // Verificar si se encontró un tour con el ID dado
   if (!filteredTour) {
-    return <div>No se encontró la noticia con el ID especificado</div>;
+    return <div>No se encontró ningún diseño</div>;
   }
 
   const handlePrevImage = () => {
@@ -72,6 +81,9 @@ const DetailNew = () => {
           </>
         )}
       </div>
+      <button onClick={handleAddToCart} className="btn">
+        Agregar al Carrito
+      </button>
       <p className="info">{filteredTour.info}</p>
     </>
   );
