@@ -38,7 +38,7 @@ const Navbar1 = () => {
             <span
               className="badge"
               style={{
-                marginLeft: "5px",
+                marginLeft: "0.0rem",
                 backgroundColor: "#007bff",
                 color: "white",
                 borderRadius: "50%",

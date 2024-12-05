@@ -8,11 +8,18 @@ export const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCartItems = localStorage.getItem("cartItems");
+    return savedCartItems ? JSON.parse(savedCartItems) : [];
+  });
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (item) => {
     setCart([...cart, item]);
@@ -21,10 +28,12 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = (itemId) => {
     setCart(cart.filter((item) => item.id !== itemId));
+    setCartItems(cartItems.filter((item) => item.id !== itemId)); // Actualiza cartItems
   };
 
   const clearCart = () => {
     setCart([]);
+    setCartItems([]);
   };
 
   const updateQuantity = (id, change) => {
@@ -37,6 +46,7 @@ export const CartProvider = ({ children }) => {
     );
   };
   const itemCount = cartItems.length;
+
   return (
     <CartContext.Provider
       value={{

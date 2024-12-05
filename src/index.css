@@ -234,6 +234,27 @@ Hero
     max-width: 45rem;
   }
 }
+
+/* Modifico la imagen del hero para que se vea bien*/
+@media screen and (max-width: 600px) {
+  .hero-banner h1 {
+    font-size: 2rem; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+  }
+  .hero-banner p {
+    font-size: 1rem; /* Ajusta el tamaño de fuente para el párrafo */
+    padding: 0 1rem; /* Ajusta el padding si es necesario */
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  .hero-banner h1 {
+    font-size: 2.5rem; /* Ajusta el tamaño de fuente para pantallas medianas */
+  }
+  .hero-banner p {
+    font-size: 1.25rem; /* Ajusta el tamaño de fuente para el párrafo */
+  }
+}
+
 /*
 =============== 
 About

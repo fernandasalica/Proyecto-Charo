@@ -121,29 +121,6 @@ const Cart = () => {
             </div>
           )}
         </div>
-        {/* Tabla de Total */}
-        {/* <div style={{ marginLeft: "20px" }}>
-          <h3>Total</h3>
-          <table style={{ margin: "0 auto" }}>
-            <tbody>
-              <tr>
-                <td>Total:</td>
-                <td>$ {calculateTotal()}</td>
-              </tr>
-            </tbody>
-          </table>
-          <div style={{ marginTop: "20px" }}>
-            <button onClick={() => alert("Proceder al pago")} className="btn">
-              Proceder al pago
-            </button>
-            <button
-              onClick={() => alert("Elegir más productos")}
-              className="btn"
-            >
-              Elegir más productos
-            </button>
-          </div>
-        </div> */}
       </div>
     </>
   );

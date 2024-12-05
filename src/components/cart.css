@@ -9,12 +9,13 @@ table {
   margin: 40px auto 20px; /* Añadir margen superior de 40px y margen inferior de 20px */
   border-collapse: collapse;
   width: 100%;
+  border: 1px solid rgb(188, 182, 182); /* Establece el borde exterior */
 }
 
 table,
 th,
 td {
-  border: 1px solid #ccc; /* Borde alrededor de las tablas y celdas */
+  /* border: 1px solid #ccc; Borde alrededor de las tablas y celdas */
 }
 
 th,
