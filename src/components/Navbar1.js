@@ -38,12 +38,11 @@ const Navbar1 = () => {
             <span
               className="badge"
               style={{
-                marginLeft: "0.0rem",
                 backgroundColor: "#007bff",
                 color: "white",
                 borderRadius: "50%",
                 padding: "2px 6px",
-                fontSize: "14px",
+                fontSize: "11px",
               }}
             >
               {itemCount}

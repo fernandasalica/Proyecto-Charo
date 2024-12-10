@@ -18,7 +18,7 @@ const DetailNew = () => {
   const handleAddToCart = () => {
     if (filteredTour) {
       addToCart(filteredTour); // Agrega el tour al carrito
-      alert(`${filteredTour.title} ha sido agregado al carrito.`); // Mensaje de confirmación
+      // alert(`${filteredTour.title} ha sido agregado al carrito.`); // Mensaje de confirmación
     }
   };
 

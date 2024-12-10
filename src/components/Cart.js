@@ -98,12 +98,9 @@ const Cart = () => {
                   </tbody>
                 </table>
                 <div style={{ marginTop: "20px" }}>
-                  <button
-                    onClick={() => alert("Proceder al pago")}
-                    className="btn"
-                  >
-                    Proceder al pago
-                  </button>
+                  <Link to="/ContinueShopping">
+                    <button className="btn">Continuar la compra</button>
+                  </Link>
                   <button className="btn">
                     <Link to={`http://localhost:3000/#inicio`}>
                       Volver a la tienda

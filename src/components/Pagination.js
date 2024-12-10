@@ -29,7 +29,9 @@ function Pagination({ data, itemsPerPage }) {
           return (
             <article className="tour-card" key={id}>
               <div className="tour-img-container">
-                <img src={image1} className="tour-img" alt="" />
+                <Link to={`/detalle/${id}`}>
+                  <img src={image1} className="tour-img" alt="" />
+                </Link>
                 <p className="tour-date">$ {price}</p>
               </div>
               <div className="tour-info">

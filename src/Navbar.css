@@ -69,6 +69,6 @@
 
 .badge {
   position: relative;
-  top: -10px; /* Ajusta la posición según sea necesario */
-  right: -10px; /* Ajusta la posición según sea necesario */
+  top: -15px; /* Ajusta la posición según sea necesario */
+  right: -2px; /* Ajusta la posición según sea necesario */
 }

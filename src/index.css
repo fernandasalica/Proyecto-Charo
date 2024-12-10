@@ -202,6 +202,7 @@ Hero
 }
 .hero-banner h1 {
   text-transform: uppercase;
+  font-size: 3rem;
 }
 .hero-banner p {
   max-width: 35rem;
@@ -239,6 +240,8 @@ Hero
 @media screen and (max-width: 600px) {
   .hero-banner h1 {
     font-size: 2rem; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    display: flex;
+    justify-content: center;
   }
   .hero-banner p {
     font-size: 1rem; /* Ajusta el tamaño de fuente para el párrafo */
