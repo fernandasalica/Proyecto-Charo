@@ -26,19 +26,19 @@ export const services = [
     id: 1,
     icon: "fas fa-wallet fa-fw",
     title: "entrega a domicilio",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Asperiores, officia",
+    text: "Todos nuestros envíos son totalmente gratuitos",
   },
   {
     id: 2,
     icon: "fas fa-tree fa-fw",
     title: "calidad garantizada",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Asperiores, officia",
+    text: "Aseguramos la calidad en todos nuestros productos",
   },
   {
     id: 3,
     icon: "fas fa-socks fa-fw",
     title: "productos personalizados",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Asperiores, officia esto es una prueba de toda la informacion que va a ir dentro de la noticia",
+    text: "Nuestros productos son totalmente personalizados y con diseños originales",
   },
 ];
 

@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { tours } from "../data";
 import React, { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import "./DetailNew.css";
+import { services } from "../data";
 
 const DetailNew = () => {
   window.scrollTo(0, 0);
@@ -61,30 +63,56 @@ const DetailNew = () => {
       <br></br>
       <br></br>
       <br></br>
-      <div className="container">
-        <h4>{filteredTour.title}</h4>
+      <div className="detail-container">
+        <div className="image-section">
+          <img
+            src={existingImages[currentImageIndex]}
+            alt={`Imagen ${currentImageIndex + 1}`}
+            className="img"
+          />
+          {existingImages.length > 1 && (
+            <>
+              <button onClick={handlePrevImage} className="btn">
+                Anterior
+              </button>
+              <button onClick={handleNextImage} className="btn">
+                Siguiente
+              </button>
+            </>
+          )}
+        </div>
+        <div className="info-section">
+          <h3>{filteredTour.title}</h3>
+          <p className="price">$ {filteredTour.price}</p>
+          <p className="info">{filteredTour.info}</p>
+          <hr></hr>
+          <p>
+            <i class="fa-solid fa-truck"></i>
+            <strong> Envío GRATIS</strong> a San Miguel De Tucumán (4000)
+          </p>
+          <hr></hr>
+          <button onClick={handleAddToCart} className="btn">
+            Agregar al Carrito
+          </button>
+        </div>
       </div>
-      <div className="gallery">
-        <img
-          src={existingImages[currentImageIndex]}
-          alt={`Imagen ${currentImageIndex + 1}`}
-          className="img"
-        />
-        {existingImages.length > 1 && (
-          <>
-            <button onClick={handlePrevImage} className="btn">
-              Anterior
-            </button>
-            <button onClick={handleNextImage} className="btn">
-              Siguiente
-            </button>
-          </>
-        )}
+      <hr></hr>
+      <div className="section-center services-center services-container">
+        {services.map((service) => {
+          const { id, icon, title, text } = service;
+          return (
+            <article className="service" key={id}>
+              <span className="service-icon">
+                <i className={icon}></i>
+              </span>
+              <div className="service-info">
+                <h4 className="service-title">{title}</h4>
+                <p className="service-text">{text}</p>
+              </div>
+            </article>
+          );
+        })}
       </div>
-      <button onClick={handleAddToCart} className="btn">
-        Agregar al Carrito
-      </button>
-      <p className="info">{filteredTour.info}</p>
     </>
   );
 };

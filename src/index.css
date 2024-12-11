@@ -609,12 +609,7 @@ Navbar
   padding: 15px;
   text-align: center;
 }
-.info {
-  margin: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  white-space: pre-line;
-}
+
 .pagination {
   text-align: center;
 }

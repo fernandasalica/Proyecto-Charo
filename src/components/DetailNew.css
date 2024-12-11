@@ -1,0 +1,52 @@
+.detail-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.image-section {
+  flex: 1;
+  margin-right: 20px; /* Espacio entre la imagen y la sección de información */
+}
+
+.info-section {
+  flex: 1;
+  text-align: left; /* Justifica el texto a la izquierda */
+}
+
+.info {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+.price {
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
+}
+
+.services-container {
+  padding-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .detail-container {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+  }
+
+  .image-section {
+    flex: 1;
+    margin-right: 20px; /* Espacio entre la imagen y la sección de información */
+    display: flex; /* Habilita flexbox */
+    justify-content: center; /* Centra la imagen horizontalmente */
+  }
+
+  .info-section {
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+  }
+
+  .image-section img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+}
