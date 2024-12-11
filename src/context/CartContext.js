@@ -22,8 +22,31 @@ export const CartProvider = ({ children }) => {
   }, [cartItems]);
 
   const addToCart = (item) => {
-    setCart([...cart, item]);
-    setCartItems((prevItems) => [...prevItems, item]);
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find((i) => i.id === item.id);
+      if (existingProduct) {
+        // Si el producto ya existe, incrementa la cantidad
+        return prevCart.map((i) =>
+          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+        );
+      } else {
+        // Si no existe, agrega el nuevo producto
+        return [...prevCart, { ...item, quantity: 1 }];
+      }
+    });
+
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((i) => i.id === item.id);
+      if (existingItem) {
+        // Si el producto ya existe en cartItems, incrementa la cantidad
+        return prevItems.map((i) =>
+          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+        );
+      } else {
+        // Si no existe, agrega el nuevo producto
+        return [...prevItems, { ...item, quantity: 1 }];
+      }
+    });
   };
 
   const removeFromCart = (itemId) => {

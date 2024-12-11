@@ -19,7 +19,7 @@ const DetailNew = () => {
 
   const handleAddToCart = () => {
     if (filteredTour) {
-      addToCart(filteredTour); // Agrega el tour al carrito
+      addToCart(filteredTour); // Agrega el producto al carrito
       // alert(`${filteredTour.title} ha sido agregado al carrito.`); // Mensaje de confirmación
     }
   };

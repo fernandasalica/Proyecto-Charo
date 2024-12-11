@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import "./cart.css";
 import { Link } from "react-router-dom";
+import { services } from "../data";
 
 const Cart = () => {
   window.scrollTo(0, 0);
@@ -118,6 +119,23 @@ const Cart = () => {
             </div>
           )}
         </div>
+      </div>
+      <hr></hr>
+      <div className="section-center services-center services-container">
+        {services.map((service) => {
+          const { id, icon, title, text } = service;
+          return (
+            <article className="service" key={id}>
+              <span className="service-icon">
+                <i className={icon}></i>
+              </span>
+              <div className="service-info">
+                <h4 className="service-title">{title}</h4>
+                <p className="service-text">{text}</p>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </>
   );
