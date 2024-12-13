@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Pagination({ data, itemsPerPage }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,8 +23,15 @@ function Pagination({ data, itemsPerPage }) {
   };
   const { addToCart } = useContext(CartContext);
 
+  // Función para manejar la adición al carrito y mostrar el toast
+  const handleAddToCart = (tour) => {
+    addToCart(tour);
+    toast.success(`${tour.title} ha sido agregado al carrito!`);
+  };
+
   return (
     <div>
+      <ToastContainer />
       <div className="section-center featured-center">
         {currentItems.map((tour) => {
           const { id, image1, price, title } = tour;
@@ -43,7 +52,10 @@ function Pagination({ data, itemsPerPage }) {
                 <div className="tour-footer">
                   <p>
                     <span>
-                      <button onClick={() => addToCart(tour)} className="btn1">
+                      <button
+                        onClick={() => handleAddToCart(tour)}
+                        className="btn1"
+                      >
                         Agregar al Carrito
                       </button>
                     </span>

@@ -4,6 +4,8 @@ import React, { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import "./DetailNew.css";
 import { services } from "../data";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const DetailNew = () => {
   window.scrollTo(0, 0);
@@ -20,7 +22,9 @@ const DetailNew = () => {
   const handleAddToCart = () => {
     if (filteredTour) {
       addToCart(filteredTour); // Agrega el producto al carrito
-      // alert(`${filteredTour.title} ha sido agregado al carrito.`); // Mensaje de confirmación
+      toast.success(`${filteredTour.title} ha sido agregado al carrito.`, {
+        autoClose: 3000, // Duración en milisegundos
+      });
     }
   };
 
@@ -94,6 +98,7 @@ const DetailNew = () => {
           <button onClick={handleAddToCart} className="btn">
             Agregar al Carrito
           </button>
+          <ToastContainer />
         </div>
       </div>
       <hr></hr>
