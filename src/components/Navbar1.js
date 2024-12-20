@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import "../Navbar.css";
-import logo from "../images/logo.png";
+// import logo from "../images/logo.png";
+import logo from "../images/LogoGretaOto.jpg";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext"; // Ajusta la ruta según tu estructura de archivos
 

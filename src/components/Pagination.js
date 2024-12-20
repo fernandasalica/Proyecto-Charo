@@ -26,7 +26,9 @@ function Pagination({ data, itemsPerPage }) {
   // Función para manejar la adición al carrito y mostrar el toast
   const handleAddToCart = (tour) => {
     addToCart(tour);
-    toast.success(`${tour.title} ha sido agregado al carrito!`);
+    toast.success(`${tour.title} ha sido agregado al carrito!`, {
+      autoClose: 2000, // Duración en milisegundos
+    });
   };
 
   return (

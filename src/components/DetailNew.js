@@ -23,7 +23,7 @@ const DetailNew = () => {
     if (filteredTour) {
       addToCart(filteredTour); // Agrega el producto al carrito
       toast.success(`${filteredTour.title} ha sido agregado al carrito.`, {
-        autoClose: 3000, // Duración en milisegundos
+        autoClose: 2000, // Duración en milisegundos
       });
     }
   };
