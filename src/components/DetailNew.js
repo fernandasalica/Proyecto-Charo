@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { tours } from "../data";
 import React, { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import "./DetailNew.css";
+import "../css/DetailNew.css";
 import { services } from "../data";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

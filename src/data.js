@@ -24,13 +24,13 @@ export const socialLinks = [
 export const services = [
   {
     id: 1,
-    icon: "fas fa-wallet fa-fw",
+    icon: "fas fa-truck fa-fw",
     title: "entrega a domicilio",
     text: "Todos nuestros envíos son totalmente gratuitos",
   },
   {
     id: 2,
-    icon: "fas fa-tree fa-fw",
+    icon: "fas fa-star fa-fw",
     title: "calidad garantizada",
     text: "Aseguramos la calidad en todos nuestros productos",
   },

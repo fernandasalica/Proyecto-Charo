@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "../Navbar.css";
+import "../css/Navbar.css";
 // import logo from "../images/logo.png";
 import logo from "../images/LogoGretaOto.jpg";
 import { Link } from "react-router-dom";
