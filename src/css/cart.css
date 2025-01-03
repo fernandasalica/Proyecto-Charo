@@ -12,17 +12,6 @@ table {
   border: 1px solid rgb(188, 182, 182); /* Establece el borde exterior */
 }
 
-table,
-th,
-td {
-  /* border: 1px solid #ccc; Borde alrededor de las tablas y celdas */
-}
-
-th,
-td {
-  padding: 10px; /* Espaciado interno de las celdas */
-}
-
 th {
   background-color: #f2f2f2; /* Color de fondo para los encabezados */
 }
@@ -39,4 +28,77 @@ button {
 
 button:hover {
   background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+.title {
+  margin-bottom: 3rem;
+  text-align: center;
+  margin-left: 2rem;
+}
+.cart-container {
+  display: flex; /* Usar flexbox para alinear los elementos */
+  justify-content: space-between; /* Espacio entre los elementos */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+  margin: 20px; /* Margen alrededor del contenedor */
+}
+
+.cart-items {
+  flex: 1; /* Permitir que esta sección ocupe el espacio disponible */
+  min-width: 300px; /* Ancho mínimo para la tabla de productos */
+  margin-right: 20px; /* Espacio a la derecha */
+}
+
+.cart-total {
+  flex: 0 0 300px; /* Fijar el ancho de la tabla del total */
+  min-width: 250px; /* Ancho mínimo para la tabla del total */
+  margin-left: 20px; /* Espacio a la izquierda */
+  text-align: right; /* Alinear el texto a la derecha */
+}
+
+.cart-table {
+  width: 80%; /* Hacer que la tabla ocupe todo el ancho disponible */
+  border-collapse: collapse; /* Colapsar bordes de la tabla */
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 10px; /* Espaciado interno en celdas */
+  /* border: 1px solid #ddd;*/ /* Bordes de las celdas */
+}
+
+.btn {
+  margin: 5px; /* Espaciado entre botones */
+}
+
+.total {
+  margin-top: 10px;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.subtotal {
+  display: flex;
+  /* align-items: center; */
+  gap: 10px;
+  display: flex;
+  justify-content: space-between; /* Alinea el texto y el precio en los extremos */
+  align-items: center; /* Centra verticalmente */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+.subtotal p {
+  margin: 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .cart-container {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    align-items: center; /* Centrar elementos */
+  }
+
+  .cart-total {
+    margin-left: 0; /* Eliminar margen izquierdo en pantallas pequeñas */
+    margin-top: 20px; /* Espacio superior en pantallas pequeñas */
+  }
 }

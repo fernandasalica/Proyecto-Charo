@@ -30,9 +30,9 @@ const Cart = () => {
       <br></br>
       <br></br>
       <br></br>
-      <h3>Carrito de Compras</h3>
-      <div className="cart">
-        <div>
+      <h3 className="title">Carrito de Compras</h3>
+      <div className="cart-container">
+        <div className="cart-items">
           {cart.length === 0 ? (
             <div>
               <p>El carrito está vacío</p>
@@ -88,38 +88,52 @@ const Cart = () => {
                 </tbody>
               </table>
 
-              <div style={{ marginLeft: "20px" }}>
-                <h3 style={{ marginTop: "25px" }}>Total</h3>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>Total:</td>
-                      <td>$ {calculateTotal()}</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div style={{ marginTop: "20px" }}>
-                  <Link to="/ContinueShopping">
-                    <button className="btn">Continuar la compra</button>
-                  </Link>
-                  <button className="btn">
-                    <Link to={`http://localhost:3000/#inicio`}>
-                      Volver a la tienda
-                    </Link>
-                  </button>
-                </div>
+              <div className="cart-actions">
+                {cart.length > 0 && (
+                  <div style={{ marginTop: "20px" }}>
+                    <button onClick={clearCart} className="btn">
+                      Vaciar Carrito
+                    </button>
+                  </div>
+                )}
               </div>
             </>
           )}
+        </div>
+
+        <div className="cart-total">
           {cart.length > 0 && (
-            <div style={{ marginTop: "20px" }}>
-              <button onClick={clearCart} className="btn">
-                Vaciar Carrito
-              </button>
-            </div>
+            <>
+              <div className="subtotal">
+                <p style={{ textAlign: "left" }}>Subtotal</p>
+                <p>$ {calculateTotal()}</p>
+              </div>
+              <hr></hr>
+              <table>
+                <tbody>
+                  <tr>
+                    <td className="total">TOTAL:</td>
+                    <td style={{ padding: "10px", fontWeight: "bold" }}>
+                      $ {calculateTotal()}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style={{ marginTop: "20px" }}>
+                <Link to="/ContinueShopping">
+                  <button className="btn">Continuar la compra</button>
+                </Link>
+                <button className="btn">
+                  <Link to={`http://localhost:3000/#inicio`}>
+                    Volver a la tienda
+                  </Link>
+                </button>
+              </div>
+            </>
           )}
         </div>
       </div>
+
       <hr></hr>
       <div className="section-center services-center services-container">
         {services.map((service) => {

@@ -1,4 +1,4 @@
-import "./ContinueShopping.css";
+import "../css/ContinueShopping.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
