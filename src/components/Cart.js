@@ -3,6 +3,7 @@ import { CartContext } from "../context/CartContext";
 import "../css/cart.css";
 import { Link } from "react-router-dom";
 import { services } from "../data";
+import News1 from "./News1";
 
 const Cart = () => {
   window.scrollTo(0, 0);
@@ -133,7 +134,7 @@ const Cart = () => {
           )}
         </div>
       </div>
-
+      <News1 />
       <hr></hr>
       <div className="section-center services-center services-container">
         {services.map((service) => {

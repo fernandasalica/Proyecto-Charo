@@ -27,8 +27,8 @@ const Navbar1 = () => {
         <div className={`menu-items ${isOpen ? "open" : ""}`}>
           <a href="http://localhost:3000/#inicio">Inicio</a>
           <a href="http://localhost:3000/#noticias">Diseños</a>
-          <a href="http://localhost:3000/#nosotros">Sobre mí</a>
-          <a href="http://localhost:3000/#info">Más información</a>
+          <a href="http://localhost:3000/#nosotros">Sobre Nosotros</a>
+          <a href="http://localhost:3000/#info">Más Información</a>
           <a href="http://localhost:3000/#contacto">Contacto</a>
         </div>
       </div>

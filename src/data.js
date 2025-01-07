@@ -6,7 +6,7 @@ import imagen4 from "./images/imagen2.jfif";
 export const pageLinks = [
   { id: 1, href: "http://localhost:3000/#inicio", text: "inicio" },
   { id: 4, href: "http://localhost:3000/#noticias", text: "diseños" },
-  { id: 2, href: "http://localhost:3000/#nosotros", text: "sobre mí" },
+  { id: 2, href: "http://localhost:3000/#nosotros", text: "sobre nosotros" },
   { id: 3, href: "http://localhost:3000/#info", text: "más información" },
   { id: 4, href: "http://localhost:3000/#contacto", text: "contacto" },
 ];

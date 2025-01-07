@@ -1,17 +1,16 @@
-import Title from "./Title";
 import { tours } from "../data";
-import Pagination from "../components/Pagination";
+import Pagination from "./Pagination";
 
-const News = () => {
+const News1 = () => {
   const itemsPerPage = 3; // Número de objetos por página
 
   return (
     <>
       <section className="section" id="noticias">
-        <Title title="nuestros" subTitle="diseños" />
+        <h3 className="title">También te puede interesar...</h3>
         <Pagination data={tours} itemsPerPage={itemsPerPage} />
       </section>
     </>
   );
 };
-export default News;
+export default News1;

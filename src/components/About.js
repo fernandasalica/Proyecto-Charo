@@ -4,7 +4,7 @@ import Title from "./Title";
 const About = () => {
   return (
     <section className="section" id="nosotros">
-      <Title title="sobre" subTitle="mí" />
+      <Title title="sobre" subTitle="nosotros" />
 
       <div className="section-center about-center">
         <div className="about-img">

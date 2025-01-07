@@ -3,7 +3,7 @@ import Title from "./Title";
 const Contact = () => {
   return (
     <section className="section" id="contacto">
-      <Title title="Contacta" subTitle="conmigo" />
+      <Title title="Contacta" subTitle="con nosotros" />
       <div className="contact">
         <p>
           Si deseas colaborar con nosotros, si tienes dudas, si necesitas ayuda,
